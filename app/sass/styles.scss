@@ -1,0 +1,934 @@
+/*******************************FONTS********************************************/
+
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Roboto');
+@import url('https://use.fontawesome.com/releases/v5.1.1/css/all.css');
+/*****************************VARIABLES******************************************/
+
+$phone: "only screen and (max-width: 480px)";
+$tablet: "only screen and (min-width: 481px) and (max-width: 768px)";
+$notebook: "only screen and (min-width: 769px) and (max-width: 960px)";
+$desktop: "only screen and (min-width: 961px)";
+$universalBorder: 1px #cccccc solid;
+$navbarBorder: 1px #eeeeee solid;
+$navbarBorderDark: 1px #171717 solid;
+/*****************************MIXINS******************************************/
+
+@mixin test() {
+    height: 100px;
+    background: #333333;
+}
+
+@mixin grid($width) {
+    width: $width;
+    float: left;
+    padding: 10px;    
+}
+
+@mixin font($font,
+$line) {
+    font-size: $font;
+    line-height: $line;
+}
+
+;
+@mixin shadowOne() {
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(238, 238, 238, 1);
+    -moz-box-shadow: 0px 10px 20px 0px rgba(238, 238, 238, 1);
+    box-shadow: 0px 10px 20px 0px rgba(238, 238, 238, 1);
+}
+
+/***************************RESET**********************************************/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/****************FONTS****************************************************************************/
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    @media #{$desktop} {
+        @include font(1em,
+        1.375em);
+    }
+    ;
+    @media #{$notebook} {
+        @include font(1em,
+        1.375em);
+    }
+    ;
+    @media #{$tablet} {
+        @include font(1em,
+        1.25em);
+    }
+    ;
+    @media #{$phone} {
+        @include font(1em,
+        1.25em);
+    }
+    ;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+    {
+    font-family: 'Roboto', sans-serif;
+    margin: 20px 0;
+    color: #333333;
+}
+
+h1 {
+    @media #{$desktop} {
+        @include font(3em,
+        1.05em);
+    }
+    ;
+    @media #{$notebook} {
+        @include font(2.5em,
+        1.125em);
+    }
+    ;
+    @media #{$tablet} {
+        @include font(2.5em,
+        1.125em);
+    }
+    ;
+    @media #{$phone} {
+        @include font(2em,
+        1.25em);
+    }
+    ;
+}
+
+h2 {
+    @media #{$desktop} {
+        @include font(2.25em,
+        1.25em);
+    }
+    ;
+    @media #{$notebook} {
+        @include font(2em,
+        1.25em);
+    }
+    ;
+    @media #{$tablet} {
+        @include font(2em,
+        1.25em);
+    }
+    ;
+    @media #{$phone} {
+        @include font(1.625em,
+        1.15384615em);
+    }
+    ;
+}
+
+h3 {
+    @media #{$desktop} {
+        @include font(1.75em,
+        1.25em);
+    }
+    ;
+    @media #{$notebook} {
+        @include font(1.5em,
+        1.25em);
+    }
+    ;
+    @media #{$tablet} {
+        @include font(1.5em,
+        1.25em);
+    }
+    ;
+    @media #{$phone} {
+        @include font(1.375em,
+        1.13636364em);
+    }
+    ;
+}
+
+h4 {
+    @media #{$desktop} {
+        @include font(1.125em,
+        1.1.22222222em);
+    }
+    ;
+    @media #{$notebook} {
+        @include font(1.125em,
+        1.1.22222222em);
+    }
+    ;
+    @media #{$tablet} {
+        @include font(1.125em,
+        1.1.22222222em);
+    }
+    ;
+    @media #{$phone} {
+        @include font(1.125em,
+        1.1111111em);
+    }
+    ;
+}
+
+h5 {
+    @media #{$desktop} {
+        @include font(1.0625em,
+        1.0555555em);
+    }
+    ;
+    @media #{$notebook} {
+        @include font(1.0625em,
+        1.0555555em);
+    }
+    ;
+    @media #{$tablet} {
+        @include font(1.0625em,
+        1.0555555em);
+    }
+    ;
+    @media #{$phone} {
+        @include font(1.0625em,
+        1.0555555em);
+    }
+    ;
+}
+
+h6 {
+    @media #{$desktop} {
+        @include font(1em,
+        1.375em);
+    }
+    ;
+    @media #{$notebook} {
+        @include font(1em,
+        1.375em);
+    }
+    ;
+    @media #{$tablet} {
+        @include font(1em,
+        1.25em);
+    }
+    ;
+    @media #{$phone} {
+        @include font(1em,
+        1.25em);
+    }
+    ;
+}
+
+blockquote,
+q {
+    font-family: 'Lato', sans-serif;
+    color: #666666;
+    font-style: italic;
+    text-align: center;
+    margin: 15px 15px;
+    &:before {
+        content: '';
+    }
+    &:after {
+        content: '';
+    }
+    @media #{$desktop} {
+        @include font(1.5em,
+        1.45833333em);
+    }
+    ;
+    @media #{$notebook} {
+        @include font(1.5em,
+        1.45833333em);
+    }
+    ;
+    @media #{$tablet} {
+        @include font(1.5em,
+        1.45833333em);
+    }
+    ;
+    @media #{$phone} {
+        @include font(1.25em,
+        1.25em);
+    }
+    ;
+}
+
+p {
+    margin: 10px 0;
+}
+
+/****************GRID***********************************************************************************/
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.wrapper-static {
+    margin: 0 auto;
+    @media #{$desktop} {
+        width: 950px;
+    }
+    @media #{$notebook} {
+        width: 750px;
+    }
+    @media #{$tablet} {
+        max-width: 750px;
+        width: auto;
+    }
+    @media #{$phone} {
+        max-width: 480px;
+        width: auto;
+    }
+}
+
+.row {
+    width: 100%;
+    padding: 15px 0;
+    &:before {
+        display: table;
+        content: " ";
+    }
+    &:after {
+        clear: both;
+        display: table;
+        content: " ";
+    }
+}
+
+@media #{$phone} {
+    .s-col-1 {
+        @include grid(8.3333%)
+    }
+    .s-col-2 {
+        @include grid(16.6666%)
+    }
+    .s-col-3 {
+        @include grid(25%)
+    }
+    .s-col-4 {
+        @include grid(33.3333%)
+    }
+    .s-col-5 {
+        @include grid(41.6666%)
+    }
+    .s-col-6 {
+        @include grid(50%)
+    }
+    .s-col-7 {
+        @include grid(58.3333%)
+    }
+    .s-col-8 {
+        @include grid(66.6666%)
+    }
+    .s-col-9 {
+        @include grid(75%)
+    }
+    .s-col-10 {
+        @include grid(83.3333%)
+    }
+    .s-col-11 {
+        @include grid(91.6666%)
+    }
+    .s-col-12 {
+        @include grid(100%)
+    }
+    .s-offset-1 {
+        margin-left: 8.3333%;
+    }
+    .s-offset-2 {
+        margin-left: 16.6666%;
+    }
+    .s-offset-3 {
+        margin-left: 25%;
+    }
+    .s-offset-4 {
+        margin-left: 33.3333%;
+    }
+    .s-offset-5 {
+        margin-left: 41.6666%;
+    }
+    .s-offset-6 {
+        margin-left: 50%;
+    }
+    .s-offset-7 {
+        margin-left: 58.3333%;
+    }
+    .s-offset-8 {
+        margin-left: 66.6666%;
+    }
+    .s-offset-9 {
+        margin-left: 75%;
+    }
+    .s-offset-10 {
+        margin-left: 83.3333%;
+    }
+    .s-offset-11 {
+        margin-left: 91.6666%;
+    }
+}
+@media #{$tablet} {
+    .m-col-1 {
+        @include grid(8.3333%)
+    }
+    .m-col-2 {
+        @include grid(16.6666%)
+    }
+    .m-col-3 {
+        @include grid(25%)
+    }
+    .m-col-4 {
+        @include grid(33.3333%)
+    }
+    .m-col-5 {
+        @include grid(41.6666%)
+    }
+    .m-col-6 {
+        @include grid(50%)
+    }
+    .m-col-7 {
+        @include grid(58.3333%)
+    }
+    .m-col-8 {
+        @include grid(66.6666%)
+    }
+    .m-col-9 {
+        @include grid(75%)
+    }
+    .m-col-10 {
+        @include grid(83.3333%)
+    }
+    .m-col-11 {
+        @include grid(91.6666%)
+    }
+    .m-col-12 {
+        @include grid(100%)
+    }
+    .m-offset-1 {
+        margin-left: 8.3333%;
+    }
+    .m-offset-2 {
+        margin-left: 16.6666%;
+    }
+    .m-offset-3 {
+        margin-left: 25%;
+    }
+    .m-offset-4 {
+        margin-left: 33.3333%;
+    }
+    .m-offset-5 {
+        margin-left: 41.6666%;
+    }
+    .m-offset-6 {
+        margin-left: 50%;
+    }
+    .m-offset-7 {
+        margin-left: 58.3333%;
+    }
+    .m-offset-8 {
+        margin-left: 66.6666%;
+    }
+    .m-offset-9 {
+        margin-left: 75%;
+    }
+    .m-offset-10 {
+        margin-left: 83.3333%;
+    }
+    .m-offset-11 {
+        margin-left: 91.6666%;
+    }
+}
+@media #{$notebook} {
+    .l-col-1 {
+        @include grid(8.3333%)
+    }
+    .l-col-2 {
+        @include grid(16.6666%)
+    }
+    .l-col-3 {
+        @include grid(25%)
+    }
+    .l-col-4 {
+        @include grid(33.3333%)
+    }
+    .l-col-5 {
+        @include grid(41.6666%)
+    }
+    .l-col-6 {
+        @include grid(50%)
+    }
+    .l-col-7 {
+        @include grid(58.3333%)
+    }
+    .l-col-8 {
+        @include grid(66.6666%)
+    }
+    .l-col-9 {
+        @include grid(75%)
+    }
+    .l-col-10 {
+        @include grid(83.3333%)
+    }
+    .l-col-11 {
+        @include grid(91.6666%)
+    }
+    .l-col-12 {
+        @include grid(100%)
+    }
+    .l-offset-1 {
+        margin-left: 8.3333%;
+    }
+    .l-offset-2 {
+        margin-left: 16.6666%;
+    }
+    .l-offset-3 {
+        margin-left: 25%;
+    }
+    .l-offset-4 {
+        margin-left: 33.3333%;
+    }
+    .l-offset-5 {
+        margin-left: 41.6666%;
+    }
+    .l-offset-6 {
+        margin-left: 50%;
+    }
+    .l-offset-7 {
+        margin-left: 58.3333%;
+    }
+    .l-offset-8 {
+        margin-left: 66.6666%;
+    }
+    .l-offset-9 {
+        margin-left: 75%;
+    }
+    .l-offset-10 {
+        margin-left: 83.3333%;
+    }
+    .l-offset-11 {
+        margin-left: 91.6666%;
+    }
+}
+@media #{$desktop} {
+    .xl-col-1 {
+        @include grid(8.3333%)
+    }
+    .xl-col-2 {
+        @include grid(16.6666%)
+    }
+    .xl-col-3 {
+        @include grid(25%)
+    }
+    .xl-col-4 {
+        @include grid(33.3333%)
+    }
+    .xl-col-5 {
+        @include grid(41.6666%)
+    }
+    .xl-col-6 {
+        @include grid(50%)
+    }
+    .xl-col-7 {
+        @include grid(58.3333%)
+    }
+    .xl-col-8 {
+        @include grid(66.6666%)
+    }
+    .xl-col-9 {
+        @include grid(75%)
+    }
+    .xl-col-10 {
+        @include grid(83.3333%)
+    }
+    .xl-col-11 {
+        @include grid(91.6666%)
+    }
+    .xl-col-12 {
+        @include grid(100%)
+    }
+    .xl-offset-1 {
+        margin-left: 8.3333%;
+    }
+    .xl-offset-2 {
+        margin-left: 16.6666%;
+    }
+    .xl-offset-3 {
+        margin-left: 25%;
+    }
+    .xl-offset-4 {
+        margin-left: 33.3333%;
+    }
+    .xl-offset-5 {
+        margin-left: 41.6666%;
+    }
+    .xl-offset-6 {
+        margin-left: 50%;
+    }
+    .xl-offset-7 {
+        margin-left: 58.3333%;
+    }
+    .xl-offset-8 {
+        margin-left: 66.6666%;
+    }
+    .xl-offset-9 {
+        margin-left: 75%;
+    }
+    .xl-offset-10 {
+        margin-left: 83.3333%;
+    }
+    .xl-offset-11 {
+        margin-left: 91.6666%;
+    }
+}
+/**********************************NAVBARS******************************************/
+
+.navbar {
+    width: 100%;
+    width: auto;
+    overflow: auto;
+    background: #ffffff;
+    border-bottom: $navbarBorder;
+}
+
+.navbar-group {
+    display: inline-block;
+    @media #{$tablet} {
+        display: block;
+    }
+    @media #{$phone} {
+        display: block;
+    }
+}
+
+.navbar-list {
+    height: 100%;
+    font-size: 0;
+    line-height: normal;
+    & > li {
+        display: block;
+        float: left;
+        font-size: 16px;
+        border-left: $navbarBorder;
+        z-index: 1000;
+
+    }
+    & > li:last-child {
+        border-right: $navbarBorder;
+    }
+    & > li > a {
+        display: block;
+        width: 100%;
+        width: auto;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        color: #666666;
+    }
+    & > li:hover {
+        background-color: #eeeeee;
+        cursor: pointer;
+    }
+    @media #{$tablet} {
+        width: 100%;
+        & > li {
+            float: none;
+            border-bottom: $navbarBorder;
+            border-left: none;
+        }
+        & > li:last-child {
+            border-right: none;
+        }
+    }
+    ;
+    @media #{$phone} {
+        width: 100%;
+        & > li {
+            float: none;
+            border-bottom: $navbarBorder;
+            border-left: none;
+        }
+        & > li:last-child {
+            border-right: none;
+        }
+    }
+    
+}
+
+.navbar-right {
+    float: right;
+    @media #{$tablet} {
+        float: inherit;
+    }
+    @media #{$phone} {
+        float: inherit;
+    }
+}
+
+.navbar-left {
+    float: left;
+    @media #{$tablet} {
+        float: inherit;
+    }
+    @media #{$phone} {
+        float: inherit;
+    }
+}
+
+.navbar-shadow {
+    @include shadowOne();
+}
+
+.navbar-sticky {
+    position: sticky;
+    top: 0;
+}
+
+.navbar-dark {
+    background: #282828;
+    ul > li {
+        border: none;
+    }
+    ul > li:last-child {
+        border-right: none;
+    }
+    ul > li,
+    ul > li > a {
+        color: #ffffff;
+    }
+    ul > li:hover {
+        background: #393939;
+    }
+}
+
+/* hamburger */
+
+.hamburger {
+    border: $navbarBorder;
+    border-radius: 4px;
+    background: #ffffff;
+    padding: 5px 10px;
+    margin: 10px;
+    display: none;
+    cursor: pointer;
+    &:hover {
+        background-color: #eeeeee;
+    }
+    @media #{$tablet} {
+        display: block;
+        & + ul {
+            display: none;
+        }
+    }
+    @media #{$phone} {
+        display: block;
+        & + ul {
+            display: none;
+        }
+    }
+}
+
+/* JS Menu */
+
+.navbar-list.noEffect.active {
+    display: block;
+}
+
+@keyframes slideDown {
+    0% {
+        max-height: 0;
+        height: 0;
+    }
+    100% {
+        max-height: 100vh;
+        height: 100%;
+    }
+}
+
+.navbar-list.slideDown {
+    overflow: hidden;
+
+}
+
+.navbar-list.slideDown.active {
+    display: block;
+    animation-name: slideDown;
+    animation-duration: 1s;
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translate(-100%, 0);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+.navbar-list.slideLeft.active {
+    display: block;
+    animation-name: slideLeft;
+    animation-duration: 1s;
+}
+
+/* Images */
+%imageSize {
+    display: block;
+    height: auto; 
+    max-width: 100%;
+}
+.s-img {
+    width: 150px;
+    @extend %imageSize; 
+}
+.m-img {
+    width: 300px;
+    @extend %imageSize; 
+}
+.l-img {
+    width: 600px;
+    @extend %imageSize; 
+}
+.xl-img {
+    width: 1024px;
+    @extend %imageSize; 
+}
+//align
+.img-left {
+    margin-right: auto;
+}
+.img-middle {
+    margin: 0 auto;
+}
+.img-right {
+    margin-left: auto;
+}
+//image type
+.img-circle {
+    border-radius: 50%;
+}
+.img-rounded {
+    border-radius: 5px;   
+}
+//gallery
+.gallery-item {
+    padding: 4px;
+    border: $universalBorder;
+    border-radius: 4px;
+}
