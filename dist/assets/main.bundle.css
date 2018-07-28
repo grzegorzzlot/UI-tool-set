@@ -812,3 +812,18 @@ p {
   padding: 4px;
   border: 1px #cccccc solid;
   border-radius: 4px; }
+
+/* buttons */
+.btn {
+  display: inline-block;
+  border: 1px #cccccc solid;
+  font-size: 1em;
+  text-decoration: none;
+  color: #000000;
+  font-family: inherit;
+  line-height: inherit;
+  padding: 5px 10px;
+  cursor: pointer;
+  background: #ffffff; }
+  .btn:hover {
+    background: #eeeeee; }
