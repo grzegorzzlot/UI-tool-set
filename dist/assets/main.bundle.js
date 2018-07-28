@@ -78,7 +78,6 @@ module.exports = __webpack_require__(2);
 "use strict";
 
 
-
 /* Menu constructor */
 
 function Menu(selector, options) {
@@ -128,10 +127,98 @@ Menu.prototype.changeIcon = function () {
     };
 };
 
-var ob = new Menu('.navbar', {
-    effect: 'slideDown',
-    changeIcon: false
+/* Button constructor */
+function Button(selector, options) {
+    this.selector = document.querySelector(selector);
+    this.properties = {
+        background: 'green'
+    };
+    this.properties = Object.assign(this.properties, options);
+
+    this.background();
+    this.hover();
+}
+Button.prototype.background = function () {
+    var el = this.selector;
+    var value = this.properties.background;
+
+    switch (value) {
+        case 'green':
+            el.style.backgroundColor = '#4CAF50';
+            el.style.borderColor = '#4CAF50';
+            el.style.color = '#ffffff';
+            break;
+        case 'blue':
+            el.style.backgroundColor = '#008CBA';
+            el.style.borderColor = '#008CBA';
+            el.style.color = '#ffffff';
+            break;
+        case 'red':
+            el.style.backgroundColor = '#f44336';
+            el.style.borderColor = '#f44336';
+            el.style.color = '#ffffff';
+            break;
+        case 'orange':
+            el.style.backgroundColor = '#ffcc00';
+            el.style.borderColor = '#ffcc00';
+            el.style.color = '#ffffff';
+            break;
+        case 'gray':
+            el.style.backgroundColor = '#e7e7e7';
+            el.style.borderColor = '#e7e7e7';
+            el.style.color = '#ffffff';
+            break;
+        case 'black':
+            el.style.backgroundColor = '#555555';
+            el.style.borderColor = '#555555';
+            el.style.color = '#ffffff';
+            break;
+    }
+    if (value.bgColor === undefined) {
+        return false;
+    } else {
+        el.style.backgroundColor = value.bgColor;
+        el.style.borderColor = value.bgColor;
+    }
+    if (value.fontColor === undefined) {
+        return false;
+    } else {
+        el.style.color = value.fontColor;
+    }
+};
+Button.prototype.hover = function () {
+    var _this2 = this;
+
+    var value = this.properties.hover;
+    if (value === undefined) {
+        return false;
+    } else {
+        this.selector.addEventListener('mouseover', function () {
+            this.style.backgroundColor = value.bgColor;
+            this.style.borderColor = value.bgColor;
+        });
+        this.selector.addEventListener('mouseout', function () {
+            _this2.selector.style.backgroundColor = _this2.properties.background.bgColor;
+            _this2.selector.style.borderColor = _this2.properties.background.bgColor;
+        });
+    }
+};
+
+/* test */
+var btn = new Button('.przycisk', {
+    background: 'gray'
 });
+var bt = new Button('.przycisk2', {
+    background: {
+        bgColor: '#333333',
+        fontColor: '#ffffff'
+    },
+    hover: {
+        bgColor: '#444444',
+        fontColor: '#eeeeee'
+    }
+});
+console.log(bt);
 
 /***/ }),
 /* 2 */
