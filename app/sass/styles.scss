@@ -21,7 +21,7 @@ $navbarBorderDark: 1px #171717 solid;
 @mixin grid($width) {
     width: $width;
     float: left;
-    padding: 10px;    
+    padding: 10px;
 }
 
 @mixin font($font,
@@ -36,7 +36,18 @@ $line) {
     -moz-box-shadow: 0px 10px 20px 0px rgba(238, 238, 238, 1);
     box-shadow: 0px 10px 20px 0px rgba(238, 238, 238, 1);
 }
-
+@mixin button($bg,
+$font,
+$hover) {
+    background-color: $bg;
+    color: #ffffff;
+    border-color: $bg;
+    &:hover {
+        background-color: $hover;
+        border-color: $hover;
+        color: $font;
+    }
+}
 /***************************RESET**********************************************/
 
 html,
@@ -484,6 +495,7 @@ p {
         margin-left: 91.6666%;
     }
 }
+
 @media #{$tablet} {
     .m-col-1 {
         @include grid(8.3333%)
@@ -555,6 +567,7 @@ p {
         margin-left: 91.6666%;
     }
 }
+
 @media #{$notebook} {
     .l-col-1 {
         @include grid(8.3333%)
@@ -626,6 +639,7 @@ p {
         margin-left: 91.6666%;
     }
 }
+
 @media #{$desktop} {
     .xl-col-1 {
         @include grid(8.3333%)
@@ -697,6 +711,7 @@ p {
         margin-left: 91.6666%;
     }
 }
+
 /**********************************NAVBARS******************************************/
 
 .navbar {
@@ -768,7 +783,7 @@ p {
             border-right: none;
         }
     }
-    
+
 }
 
 .navbar-right {
@@ -888,51 +903,64 @@ p {
 }
 
 /* Images */
+
 %imageSize {
     display: block;
-    height: auto; 
+    height: auto;
     max-width: 100%;
 }
+
 .s-img {
     width: 150px;
-    @extend %imageSize; 
+    @extend %imageSize;
 }
+
 .m-img {
     width: 300px;
-    @extend %imageSize; 
+    @extend %imageSize;
 }
+
 .l-img {
     width: 600px;
-    @extend %imageSize; 
+    @extend %imageSize;
 }
+
 .xl-img {
     width: 1024px;
-    @extend %imageSize; 
+    @extend %imageSize;
 }
+
 //align
 .img-left {
     margin-right: auto;
 }
+
 .img-middle {
     margin: 0 auto;
 }
+
 .img-right {
     margin-left: auto;
 }
+
 //image type
 .img-circle {
     border-radius: 50%;
 }
+
 .img-rounded {
-    border-radius: 5px;   
+    border-radius: 5px;
 }
+
 //gallery
 .gallery-item {
     padding: 4px;
     border: $universalBorder;
     border-radius: 4px;
 }
+
 /* buttons */
+
 .btn {
     display: inline-block;
     border: $universalBorder;
@@ -946,5 +974,77 @@ p {
     background: #ffffff;
     &:hover {
         background: #eeeeee;
+    }
+}
+.btn-green {
+    @include button(#4CAF50,
+    #ffffff,
+    #5dbf61);
+}
+
+.btn-blue {
+    @include button(#008CBA,
+    #ffffff,
+    #119dcb);
+}
+
+.btn-orange {
+    @include button(#ffcc00,
+    #ffffff,
+    #ffdd11);
+}
+
+.btn-red {
+    @include button(#f44336,
+    #ffffff,
+    #f55447);
+}
+
+.btn-gray {
+    @include button(#e7e7e7,
+    #bbbbbb,
+    #f2f2f2);
+}
+
+.btn-black {
+    @include button(#555555,
+    #ffffff,
+    #666666);
+}
+.btn-shadow:hover {
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(102,102,102,0.5);
+    -moz-box-shadow: 5px 5px 10px 0px rgba(102,102,102,0.5);
+    box-shadow: 5px 5px 10px 0px rgba(102,102,102,0.5);
+}
+.btn-round {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+.btn-small{
+    font-size: 0.8em;
+    padding: 4px 8px;
+}
+.btn-medium{
+    font-size: 1.2em;
+    padding: 6px 12px;
+}
+.btn-large{
+    font-size: 1.4em;
+    padding: 7px 14px;
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
+/* tables */
+.table {
+    display: table;
+    width: 100%;
+    th, td {
+        display: table-cell;
+        text-align: center;
+        padding: 5px;
+        border: $universalBorder;
     }
 }

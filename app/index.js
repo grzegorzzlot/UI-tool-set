@@ -64,34 +64,22 @@ Button.prototype.background = function () {
 
     switch (value) {
         case 'green':
-            el.style.backgroundColor = '#4CAF50';
-            el.style.borderColor = '#4CAF50';
-            el.style.color = '#ffffff';
+            el.classList.add('btn-green');
             break;
         case 'blue':
-            el.style.backgroundColor = '#008CBA';
-            el.style.borderColor = '#008CBA';
-            el.style.color = '#ffffff';
+            el.classList.add('btn-blue');
             break;
         case 'red':
-            el.style.backgroundColor = '#f44336';
-            el.style.borderColor = '#f44336';
-            el.style.color = '#ffffff';
+            el.classList.add('btn-red');
             break;
         case 'orange':
-            el.style.backgroundColor = '#ffcc00';
-            el.style.borderColor = '#ffcc00';
-            el.style.color = '#ffffff';
+            el.classList.add('btn-orange');
             break;
         case 'gray':
-            el.style.backgroundColor = '#e7e7e7';
-            el.style.borderColor = '#e7e7e7';
-            el.style.color = '#ffffff';
+            el.classList.add('btn-gray');
             break;
         case 'black':
-            el.style.backgroundColor = '#555555';
-            el.style.borderColor = '#555555';
-            el.style.color = '#ffffff';
+            el.classList.add('btn-black');
             break;
     }
     if (value.bgColor === undefined) {
@@ -120,13 +108,13 @@ Button.prototype.hover = function () {
             this.selector.style.borderColor = this.properties.background.bgColor;
         });
     }
-    
+
 }
 
 
 /* test */
 const btn = new Button('.przycisk', {
-    background: 'gray'
+    background: 'green'
 });
 const bt = new Button('.przycisk2', {
     background: {
