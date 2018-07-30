@@ -793,6 +793,12 @@ p {
 .xl-img {
   width: 1024px; }
 
+.thumbnail-img {
+  display: block;
+  width: 70px;
+  height: 70px;
+  object-fit: cover; }
+
 .img-left {
   margin-right: auto; }
 
@@ -910,10 +916,88 @@ p {
 
 /* tables */
 .table {
+  margin: 20px 0;
   display: table;
-  width: 100%; }
-  .table th, .table td {
+  width: 100%;
+  border: #f1f1f1 1px solid; }
+  .table th,
+  .table td {
     display: table-cell;
     text-align: center;
-    padding: 5px;
-    border: 1px #cccccc solid; }
+    padding: 5px; }
+
+.table-striped tr:nth-child(odd) {
+  background-color: #f1f1f1; }
+
+.table-hoverable tr:nth-child(n + 2):hover {
+  background-color: #d8d8d8; }
+
+/* list */
+.list {
+  margin: 20px 0; }
+  .list > li {
+    width: 100%;
+    padding: 5px 10px;
+    border-bottom: #f1f1f1 1px solid; }
+
+.list-hover > li:hover {
+  background-color: #f1f1f1; }
+
+.list-shadowed {
+  border: #f1f1f1 1px solid;
+  box-shadow: 5px 5px 10px 0px rgba(102, 102, 102, 0.5);
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(102, 102, 102, 0.5);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(102, 102, 102, 0.5); }
+
+.list > li {
+  position: relative; }
+
+.list-bar {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 15px; }
+
+.list-bar-close {
+  position: absolute;
+  right: 0px; }
+
+/* panels */
+.panel {
+  display: block;
+  width: 100%;
+  padding: 20px 10px;
+  margin: 20px 0;
+  background-color: #f1f1f1;
+  font-size: 1.3em; }
+  .panel > h1, .panel h2, .panel h3, .panel h4, .panel h5, .panel h6, .panel p {
+    color: inherit; }
+
+.panel-group {
+  margin: 20px 0; }
+  .panel-group > .panel {
+    margin: 0; }
+
+.panel-rounded {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px; }
+
+.panel-green {
+  background-color: #4CAF50;
+  color: #ffffff; }
+
+.panel-blue {
+  background-color: #008CBA;
+  color: #ffffff; }
+
+.panel-red {
+  background-color: #ffcc00;
+  color: #ffffff; }
+
+.panel-orange {
+  background-color: #f44336;
+  color: #ffffff; }
+
+.panel-gray {
+  background-color: #e7e7e7;
+  color: #666666; }

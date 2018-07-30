@@ -11,6 +11,17 @@ $desktop: "only screen and (min-width: 961px)";
 $universalBorder: 1px #cccccc solid;
 $navbarBorder: 1px #eeeeee solid;
 $navbarBorderDark: 1px #171717 solid;
+$universalBackground: #f1f1f1;
+$universalShadow: 5px 5px 10px 0px rgba(102,
+102,
+102,
+0.5);
+$green: #4CAF50;
+$blue: #008CBA;
+$red: #ffcc00;
+$orange: #f44336;
+$gray: #e7e7e7;
+$black: #555555;
 /*****************************MIXINS******************************************/
 
 @mixin test() {
@@ -36,6 +47,7 @@ $line) {
     -moz-box-shadow: 0px 10px 20px 0px rgba(238, 238, 238, 1);
     box-shadow: 0px 10px 20px 0px rgba(238, 238, 238, 1);
 }
+
 @mixin button($bg,
 $font,
 $hover) {
@@ -48,6 +60,7 @@ $hover) {
         color: $font;
     }
 }
+
 /***************************RESET**********************************************/
 
 html,
@@ -930,6 +943,13 @@ p {
     @extend %imageSize;
 }
 
+.thumbnail-img {
+    display: block;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+
 //align
 .img-left {
     margin-right: auto;
@@ -976,6 +996,7 @@ p {
         background: #eeeeee;
     }
 }
+
 .btn-green {
     @include button(#4CAF50,
     #ffffff,
@@ -1011,40 +1032,144 @@ p {
     #ffffff,
     #666666);
 }
+
 .btn-shadow:hover {
-    -webkit-box-shadow: 5px 5px 10px 0px rgba(102,102,102,0.5);
-    -moz-box-shadow: 5px 5px 10px 0px rgba(102,102,102,0.5);
-    box-shadow: 5px 5px 10px 0px rgba(102,102,102,0.5);
+    -webkit-box-shadow: $universalShadow;
+    -moz-box-shadow: $universalShadow;
+    box-shadow: $universalShadow;
 }
+
 .btn-round {
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
 }
-.btn-small{
+
+.btn-small {
     font-size: 0.8em;
     padding: 4px 8px;
 }
-.btn-medium{
+
+.btn-medium {
     font-size: 1.2em;
     padding: 6px 12px;
 }
-.btn-large{
+
+.btn-large {
     font-size: 1.4em;
     padding: 7px 14px;
 }
+
 .btn-block {
     display: block;
     width: 100%;
 }
+
 /* tables */
+
 .table {
+    margin: 20px 0;
     display: table;
     width: 100%;
-    th, td {
+    border: $universalBackground 1px solid;
+    th,
+    td {
         display: table-cell;
         text-align: center;
         padding: 5px;
-        border: $universalBorder;
     }
+}
+
+.table-striped {
+    tr:nth-child(odd) {
+        background-color: $universalBackground;
+    }
+}
+
+.table-hoverable {
+    tr:nth-child(n + 2) {
+        &:hover {
+            background-color: #d8d8d8;
+        }
+    }
+}
+
+/* list */
+
+.list {
+    margin: 20px 0;
+    & > li {
+        width: 100%;
+        padding: 5px 10px;
+        border-bottom: $universalBackground 1px solid;
+    }
+}
+
+.list-hover > li:hover {
+    background-color: $universalBackground;
+}
+
+.list-shadowed {
+    border: $universalBackground 1px solid;
+    box-shadow: $universalShadow;
+    -webkit-box-shadow: $universalShadow;
+    -moz-box-shadow: $universalShadow;
+}
+.list > li {
+    position: relative;    
+}
+.list-bar {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 15px;
+}
+
+.list-bar-close {
+    position: absolute;
+    right: 0px;
+}
+/* panels */
+
+.panel {
+    display: block;
+    width: 100%;
+    padding: 20px 10px;
+    margin: 20px 0;
+    background-color: $universalBackground;
+    font-size: 1.3em;
+    & > h1,h2,h3,h4,h5,h6,p {
+        color: inherit;
+    }
+}
+
+.panel-group {
+    margin: 20px 0;
+    & > .panel {
+        margin: 0;
+    }
+}
+.panel-rounded {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+.panel-green {
+    background-color: $green;
+    color: #ffffff;
+}
+.panel-blue {
+    background-color: $blue;  
+    color: #ffffff;
+}
+.panel-red {
+    background-color: $red;  
+    color: #ffffff;
+}
+.panel-orange {
+    background-color: $orange;   
+    color: #ffffff;
+}
+.panel-gray {
+    background-color: $gray;   
+    color: #666666;
 }
