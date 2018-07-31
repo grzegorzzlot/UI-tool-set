@@ -1,4 +1,24 @@
-"use strict"
+"use strict";
+/**** priv API ****/
+
+(function () {
+    function ItemClose(selector) {
+        this.selector = selector;
+        this.close = this.selector.addEventListener('click', remove)
+    }
+    function remove() {
+        this.parentElement.remove();
+    }
+    
+    const el = document.querySelectorAll('.item-close');
+    for (let i = 0; i < el.length; i++) {
+        const us = new ItemClose(el[i]);
+    }
+})();
+
+
+
+/**** public API ****/
 
 /* Menu constructor */
 function Menu(selector, options) {
@@ -126,4 +146,3 @@ const bt = new Button('.przycisk2', {
         fontColor: '#eeeeee'
     }
 });
-console.log(bt)

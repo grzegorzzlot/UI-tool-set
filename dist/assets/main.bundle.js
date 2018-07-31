@@ -77,9 +77,26 @@ module.exports = __webpack_require__(2);
 
 "use strict";
 
+/**** priv API ****/
+
+(function () {
+    function ItemClose(selector) {
+        this.selector = selector;
+        this.close = this.selector.addEventListener('click', remove);
+    }
+    function remove() {
+        this.parentElement.remove();
+    }
+
+    var el = document.querySelectorAll('.item-close');
+    for (var i = 0; i < el.length; i++) {
+        var us = new ItemClose(el[i]);
+    }
+})();
+
+/**** public API ****/
 
 /* Menu constructor */
-
 function Menu(selector, options) {
     this.selector = selector;
     /* Default values */
@@ -206,7 +223,6 @@ var bt = new Button('.przycisk2', {
         fontColor: '#eeeeee'
     }
 });
-console.log(bt);
 
 /***/ }),
 /* 2 */

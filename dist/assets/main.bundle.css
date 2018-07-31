@@ -797,7 +797,13 @@ p {
   display: block;
   width: 70px;
   height: 70px;
-  object-fit: cover; }
+  object-fit: cover;
+  border: 2px #dddddd solid;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 5px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px; }
 
 .img-left {
   margin-right: auto; }
@@ -957,9 +963,21 @@ p {
   vertical-align: middle;
   margin: 0 15px; }
 
-.list-bar-close {
+.item-close {
+  display: inline-block;
   position: absolute;
-  right: 0px; }
+  top: 0;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  background-color: #ffffff;
+  border-bottom: 1px #f1f1f1 solid;
+  border-left: 1px #f1f1f1 solid; }
+  .item-close > .fas {
+    font-size: 18px;
+    line-height: normal; }
 
 /* panels */
 .panel {
@@ -967,8 +985,7 @@ p {
   width: 100%;
   padding: 20px 10px;
   margin: 20px 0;
-  background-color: #f1f1f1;
-  font-size: 1.3em; }
+  background-color: #f1f1f1; }
   .panel > h1, .panel h2, .panel h3, .panel h4, .panel h5, .panel h6, .panel p {
     color: inherit; }
 

@@ -948,6 +948,12 @@ p {
     width: 70px;
     height: 70px;
     object-fit: cover;
+    border: 2px #dddddd solid;
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 5px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
 }
 
 //align
@@ -1124,9 +1130,22 @@ p {
     margin: 0 15px;
 }
 
-.list-bar-close {
+.item-close {
+    display: inline-block;
     position: absolute;
+    top: 0;
     right: 0px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    background-color: #ffffff;
+    border-bottom: 1px $universalBackground solid;
+    border-left: 1px $universalBackground solid;
+    & > .fas {
+        font-size: 18px;
+        line-height: normal;
+    }
 }
 /* panels */
 
@@ -1136,7 +1155,6 @@ p {
     padding: 20px 10px;
     margin: 20px 0;
     background-color: $universalBackground;
-    font-size: 1.3em;
     & > h1,h2,h3,h4,h5,h6,p {
         color: inherit;
     }
