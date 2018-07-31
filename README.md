@@ -19,7 +19,7 @@ You can choose between 2 types of wrappers:
 
 You can also place your columns into row container (class="row") 
 
-# Basic Structure of a UI-tool-set Grid
+#### Basic Structure of a UI-tool-set Grid
 ```
 <div class="wrapper">
   <div class="row">
@@ -45,7 +45,7 @@ Ui-tool-set default font size is 16px (1em).
 #### Line-height
 Line-height depends on the type of device you are using:
 | Desktops | Notebooks | Tablets | Phones |
-| -------- |:---------:| -------:| ------:|
+| -------- | --------- | ------- | ------ |
 | 1.375em  | 1.375em   | 1.25em  | 1.25em |
 
 
