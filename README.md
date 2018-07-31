@@ -44,6 +44,7 @@ Ui-tool-set default font size is 16px (1em).
 
 #### Line-height
 Line-height depends on the type of device you are using:
+
 | Desktops | Notebooks | Tablets | Phones |
 | -------- | --------- | ------- | ------ |
 | 1.375em  | 1.375em   | 1.25em  | 1.25em |
