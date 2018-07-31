@@ -31,7 +31,7 @@ You can also place your columns into row container (class="row")
 ## Moving elements
 You can offset your block elements using .*-offset-** classes, where:
 * *is the type of class, which depends of screen resolution
-* *is the value that determines the width of offset 
+* **is the value that determines the width of offset 
 
 Example:
 ```
