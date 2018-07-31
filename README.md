@@ -7,7 +7,7 @@ UI-tool-set grid system has 4 types of column classes:
 * m-col-* - for tablets (wide screen from 480px to 768px)
 * l-col-* - for notebooks (wide screen from 768 to 960px)
 * xl-col-* - for desktops (wide screen greater than 960px)
-*-is the value that determines the width of column, for example:
+* *is the value that determines the width of column, for example:
 ```
 <div class="m-col-4"></div>
 ```
@@ -30,8 +30,9 @@ You can also place your columns into row container (class="row")
 ```
 ## Moving elements
 You can offset your block elements using .*-offset-** classes, where:
-* - is the type of class, which depends of screen resolution
-** - is the value that determines the width of offset 
+* *is the type of class, which depends of screen resolution
+* *is the value that determines the width of offset 
+
 Example:
 ```
     <div class="m-offset-6 m-col-6"></div>  
