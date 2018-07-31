@@ -1,5 +1,5 @@
 # UI-tool-set
-## Grid system
+## 1.Grid system
 UI-tool-set's grid system allows up to 12 columns across the page
 
 UI-tool-set grid system has 4 types of column classes:
@@ -28,7 +28,7 @@ You can also place your columns into row container (class="row")
   </div>
 </div>
 ```
-## Moving elements
+## 2.Moving elements
 You can offset your block elements using .*-offset-** classes, where:
 * *is the type of class, which depends of screen resolution
 * **is the value that determines the width of offset 
@@ -39,14 +39,26 @@ Example:
 ```
 As a result of this solution the element has a width of 6 column and margin-left equal to 6 column width.
 
-## Typography
+## 3.Typography
 Ui-tool-set default font size is 16px (1em).
 
-#### Line-height
+### Line-height
 Line-height depends on the type of device you are using:
 
 | Desktops | Notebooks | Tablets | Phones |
 | -------- | --------- | ------- | ------ |
 | 1.375em  | 1.375em   | 1.25em  | 1.25em |
+
+### Headings
+Headings sizes depends on the type of device you are using:
+
+| Type | Desktops | Notebooks | Tablets  | Phones   |
+| ---- | -------- | --------- | -------- | -------- |
+| h1   | 3em      | 2.5em     | 2.5em    | 2em      |
+| h2   | 2.25em   | 2em       | 2em      | 1.625em  |
+| h3   | 1.75em   | 1.5em     | 1.5em    | 1.375em  |
+| h4   | 1.125em  | 1.125em   | 1.125em  | 1.125em  |
+| h5   | 1.0625em | 1.0625em  | 1.0625em | 1.0625em | 
+| h6   | 1em      | 1em       | 1em      | 1em      |
 
 
