@@ -40,7 +40,9 @@ Example:
 As a result of this solution the element has a width of 6 column and margin-left equal to 6 column width.
 
 ## 3.Typography
-Ui-tool-set default font size is 16px (1em).
+Ui-tool-set default font size is **16px** (1em).
+
+Global font-faminy is **Montserrat**.
 
 ### Line-height
 Line-height depends on the type of device you are using:
@@ -60,5 +62,9 @@ Headings sizes depends on the type of device you are using:
 | h4   | 1.125em  | 1.125em   | 1.125em  | 1.125em  |
 | h5   | 1.0625em | 1.0625em  | 1.0625em | 1.0625em | 
 | h6   | 1em      | 1em       | 1em      | 1em      |
+
+### Blockquotes
+Font-famity for Blockquotes is **Lato**.
+As default, font is italic and center.
 
 
