@@ -60,7 +60,10 @@ $hover) {
         color: $font;
     }
 }
-
+@mixin color($color) {
+    background-color: $color;
+    border: 1px $color solid;
+}
 /***************************RESET**********************************************/
 
 html,
@@ -724,7 +727,6 @@ p {
         margin-left: 91.6666%;
     }
 }
-
 /**********************************NAVBARS******************************************/
 
 .navbar {
@@ -951,7 +953,7 @@ p {
     border: 2px #dddddd solid;
     background-color: #ffffff;
     border-radius: 4px;
-    padding: 5px;
+    padding: 3px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
 }
@@ -1124,7 +1126,7 @@ p {
 .list > li {
     position: relative;    
 }
-.list-bar {
+.item-bar {
     display: inline-block;
     vertical-align: middle;
     margin: 0 15px;
@@ -1139,20 +1141,24 @@ p {
     height: 40px;
     cursor: pointer;
     border: none;
-    background-color: #ffffff;
-    border-bottom: 1px $universalBackground solid;
-    border-left: 1px $universalBackground solid;
+    background-color: #e9e9e9;
+    border: 1px #e9e9e9 solid;
     & > .fas {
         font-size: 18px;
         line-height: normal;
+    }
+    &:hover {
+        background-color: #d8d8d8;
+        border: 1px #d8d8d8 solid;
     }
 }
 /* panels */
 
 .panel {
+    position: relative;
     display: block;
     width: 100%;
-    padding: 20px 10px;
+    padding: 15px 10px;
     margin: 20px 0;
     background-color: $universalBackground;
     & > h1,h2,h3,h4,h5,h6,p {
@@ -1190,4 +1196,132 @@ p {
 .panel-gray {
     background-color: $gray;   
     color: #666666;
+}
+/* forms */
+.form {
+    width: 100%;
+    padding: 10px;
+}
+.input {
+    display: inline-block;
+    margin-bottom: 10px;
+    &[type="text"],
+    &[type="password"],
+    &[type="email"],
+    &[type="month"],
+    &[type="search"],
+    &[type="tel"],
+    &[type="url"],
+    &[type="week"],
+    &[type="datetime-local"] {
+        padding: 8px;
+        border: $universalBorder;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    &:last-child {
+        border-bottom: 0px;
+    }
+}
+.input-label {
+    color: #999999;
+    font-size: 0.9em;
+    font-family: 'Roboto';
+}
+.input-rounded {
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+}
+.input.input-underline {
+    border: none;
+    border-bottom: $universalBorder;
+}
+.input-focused:focus {
+    border: 1px solid $blue;
+    -webkit-box-shadow: 2px 2px 3px 0px rgba(0,140,186,0.3);
+    -moz-box-shadow: 2px 2px 3px 0px rgba(0,140,186,0.3);
+    box-shadow: 2px 2px 3px 0px rgba(0,140,186,0.3);
+}
+.input-underline.input-focused:focus {
+    border: none;
+    box-shadow: none;
+    border-bottom: 2px solid $blue;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+}
+
+
+
+/* colors 
+
+from: https://sashat.me/2017/01/11/list-of-20-simple-distinct-colors/
+
+*/
+
+.ui-red {
+    @include color(#e6194b);
+}
+.ui-green {
+    @include color(#3cb44b);
+}
+.ui-yellow {
+    @include color(#ffe119);
+}
+.ui-blue {
+    @include color(#0082c8);
+}
+.ui-orange {
+    @include color(#f58231);
+}
+.ui-purple {
+    @include color(#911eb4);
+}
+.ui-cyan {
+    @include color(#46f0f0);
+}
+.ui-magenta {
+    @include color(#f032e6);
+}
+.ui-lime {
+    @include color(#d2f53c);
+}
+.ui-pink {
+    @include color(#fabebe);
+}
+.ui-teal {
+    @include color(#008080);
+}
+.ui-lavender {
+    @include color(#e6beff);
+}
+.ui-brown {
+    @include color(#aa6e28);
+}
+.ui-beige {
+    @include color(#fffac8);
+}
+.ui-maroon {
+    @include color(#800000);
+}
+.ui-mint {
+    @include color(#aaffc3);
+}
+.ui-olive {
+    @include color(#808000);
+}
+.ui-coral {
+    @include color(#ffd8b1);
+}
+.ui-navy {
+    @include color(#000080);
+}
+.ui-grey {
+    @include color(#808080);
+}
+.ui-white {
+    @include color(#FFFFFF);
+}
+.ui-black {
+    @include color(#000000);
 }
