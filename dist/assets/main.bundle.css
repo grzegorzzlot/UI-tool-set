@@ -899,7 +899,7 @@ p {
   -moz-box-shadow: 5px 5px 10px 0px rgba(102, 102, 102, 0.5);
   box-shadow: 5px 5px 10px 0px rgba(102, 102, 102, 0.5); }
 
-.btn-round {
+.btn-rounded {
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px; }
@@ -1135,6 +1135,40 @@ p {
   padding-top: 7.5px;
   padding-bottom: 7.5px; }
 
+/* badges */
+.badge {
+  display: inline-block;
+  border: 1px #cccccc solid;
+  padding: 5px;
+  margin-left: 10px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  font-size: 1em;
+  line-height: normal; }
+
+.badge-small {
+  font-size: 0.8em;
+  padding: 2px; }
+
+.badge-medium {
+  font-size: 1.2em;
+  padding: 7px; }
+
+.badge-large {
+  font-size: 1.4em;
+  padding: 10px; }
+
+.badge-white {
+  background-color: #ffffff;
+  color: #000000; }
+
+.badge-black {
+  background-color: #000000;
+  color: #ffffff; }
+
+/* tiles */
 /* colors 
 
 from: https://sashat.me/2017/01/11/list-of-20-simple-distinct-colors/

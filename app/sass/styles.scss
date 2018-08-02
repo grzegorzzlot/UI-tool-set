@@ -1053,7 +1053,7 @@ p {
     box-shadow: $universalShadow;
 }
 
-.btn-round {
+.btn-rounded {
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -1358,6 +1358,40 @@ p {
     padding-bottom: 7.5px;
 }
 
+/* badges */
+.badge {
+    display: inline-block;
+    border: $universalBorder;
+    padding: 5px;
+    margin-left: 10px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    font-size: 1em;
+    line-height: normal;
+}
+.badge-small{
+    font-size: 0.8em;
+    padding: 2px;     
+}
+.badge-medium{
+    font-size: 1.2em;
+    padding: 7px;
+}
+.badge-large{
+    font-size: 1.4em;
+    padding: 10px;
+}
+.badge-white {
+    background-color: #ffffff;
+    color: #000000;
+}
+.badge-black {
+    background-color: #000000;
+    color: #ffffff;
+}
+/* tiles */
 
 
 /* colors 
