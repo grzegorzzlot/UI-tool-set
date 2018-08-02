@@ -989,7 +989,13 @@ p {
   padding: 15px 10px;
   margin: 20px 0;
   background-color: #f1f1f1; }
-  .panel > h1, .panel h2, .panel h3, .panel h4, .panel h5, .panel h6, .panel p {
+  .panel > h1,
+  .panel h2,
+  .panel h3,
+  .panel h4,
+  .panel h5,
+  .panel h6,
+  .panel p {
     color: inherit; }
 
 .panel-group {
@@ -1037,6 +1043,70 @@ p {
     box-sizing: border-box; }
   .input:last-child {
     border-bottom: 0px; }
+  .input:focus {
+    outline: none; }
+  .input[type="radio"] {
+    visibility: hidden;
+    height: 20px;
+    width: 20px;
+    margin: 0; }
+  .input[type="radio"]::before {
+    box-sizing: border-box;
+    display: inline-block;
+    visibility: visible;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 1px #cccccc solid;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    cursor: pointer; }
+  .input[type="radio"] + label::before {
+    box-sizing: border-box;
+    display: inline-block;
+    visibility: hidden;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border: 1px #008CBA solid;
+    background-color: #008CBA;
+    position: relative;
+    left: -19px;
+    top: -5px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%; }
+  .input[type="radio"]:checked + label::before {
+    visibility: visible; }
+  .input[type="checkbox"] {
+    visibility: hidden;
+    height: 20px;
+    width: 20px;
+    margin: 0; }
+  .input[type="checkbox"]::before {
+    box-sizing: border-box;
+    display: inline-block;
+    visibility: visible;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 1px #cccccc solid;
+    cursor: pointer; }
+  .input[type="checkbox"] + label::before {
+    box-sizing: border-box;
+    display: inline-block;
+    visibility: hidden;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border: 1px #008CBA solid;
+    background-color: #008CBA;
+    position: relative;
+    left: -19px;
+    top: -5px; }
+  .input[type="checkbox"]:checked + label::before {
+    visibility: visible; }
 
 .input-label {
   color: #999999;
@@ -1073,87 +1143,131 @@ from: https://sashat.me/2017/01/11/list-of-20-simple-distinct-colors/
 .ui-red {
   background-color: #e6194b;
   border: 1px #e6194b solid; }
+  .ui-red:hover {
+    background-color: #e6194b; }
 
 .ui-green {
   background-color: #3cb44b;
   border: 1px #3cb44b solid; }
+  .ui-green:hover {
+    background-color: #3cb44b; }
 
 .ui-yellow {
   background-color: #ffe119;
   border: 1px #ffe119 solid; }
+  .ui-yellow:hover {
+    background-color: #ffe119; }
 
 .ui-blue {
   background-color: #0082c8;
   border: 1px #0082c8 solid; }
+  .ui-blue:hover {
+    background-color: #0082c8; }
 
 .ui-orange {
   background-color: #f58231;
   border: 1px #f58231 solid; }
+  .ui-orange:hover {
+    background-color: #f58231; }
 
 .ui-purple {
   background-color: #911eb4;
   border: 1px #911eb4 solid; }
+  .ui-purple:hover {
+    background-color: #911eb4; }
 
 .ui-cyan {
   background-color: #46f0f0;
   border: 1px #46f0f0 solid; }
+  .ui-cyan:hover {
+    background-color: #46f0f0; }
 
 .ui-magenta {
   background-color: #f032e6;
   border: 1px #f032e6 solid; }
+  .ui-magenta:hover {
+    background-color: #f032e6; }
 
 .ui-lime {
   background-color: #d2f53c;
   border: 1px #d2f53c solid; }
+  .ui-lime:hover {
+    background-color: #d2f53c; }
 
 .ui-pink {
   background-color: #fabebe;
   border: 1px #fabebe solid; }
+  .ui-pink:hover {
+    background-color: #fabebe; }
 
 .ui-teal {
   background-color: #008080;
   border: 1px #008080 solid; }
+  .ui-teal:hover {
+    background-color: #008080; }
 
 .ui-lavender {
   background-color: #e6beff;
   border: 1px #e6beff solid; }
+  .ui-lavender:hover {
+    background-color: #e6beff; }
 
 .ui-brown {
   background-color: #aa6e28;
   border: 1px #aa6e28 solid; }
+  .ui-brown:hover {
+    background-color: #aa6e28; }
 
 .ui-beige {
   background-color: #fffac8;
   border: 1px #fffac8 solid; }
+  .ui-beige:hover {
+    background-color: #fffac8; }
 
 .ui-maroon {
   background-color: #800000;
   border: 1px #800000 solid; }
+  .ui-maroon:hover {
+    background-color: #800000; }
 
 .ui-mint {
   background-color: #aaffc3;
   border: 1px #aaffc3 solid; }
+  .ui-mint:hover {
+    background-color: #aaffc3; }
 
 .ui-olive {
   background-color: #808000;
   border: 1px #808000 solid; }
+  .ui-olive:hover {
+    background-color: #808000; }
 
 .ui-coral {
   background-color: #ffd8b1;
   border: 1px #ffd8b1 solid; }
+  .ui-coral:hover {
+    background-color: #ffd8b1; }
 
 .ui-navy {
   background-color: #000080;
   border: 1px #000080 solid; }
+  .ui-navy:hover {
+    background-color: #000080; }
 
 .ui-grey {
   background-color: #808080;
   border: 1px #808080 solid; }
+  .ui-grey:hover {
+    background-color: #808080; }
 
 .ui-white {
   background-color: #FFFFFF;
   border: 1px #FFFFFF solid; }
+  .ui-white:hover {
+    background-color: #FFFFFF; }
 
 .ui-black {
   background-color: #000000;
   border: 1px #000000 solid; }
+  .ui-black:hover {
+    background-color: #000000; }

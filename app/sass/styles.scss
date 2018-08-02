@@ -60,10 +60,15 @@ $hover) {
         color: $font;
     }
 }
+
 @mixin color($color) {
     background-color: $color;
     border: 1px $color solid;
+    &:hover {
+        background-color: $color;
+    }
 }
+
 /***************************RESET**********************************************/
 
 html,
@@ -727,6 +732,7 @@ p {
         margin-left: 91.6666%;
     }
 }
+
 /**********************************NAVBARS******************************************/
 
 .navbar {
@@ -1123,9 +1129,11 @@ p {
     -webkit-box-shadow: $universalShadow;
     -moz-box-shadow: $universalShadow;
 }
+
 .list > li {
-    position: relative;    
+    position: relative;
 }
+
 .item-bar {
     display: inline-block;
     vertical-align: middle;
@@ -1152,6 +1160,7 @@ p {
         border: 1px #d8d8d8 solid;
     }
 }
+
 /* panels */
 
 .panel {
@@ -1161,7 +1170,13 @@ p {
     padding: 15px 10px;
     margin: 20px 0;
     background-color: $universalBackground;
-    & > h1,h2,h3,h4,h5,h6,p {
+    & > h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
         color: inherit;
     }
 }
@@ -1172,36 +1187,45 @@ p {
         margin: 0;
     }
 }
+
 .panel-rounded {
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
 }
+
 .panel-green {
     background-color: $green;
     color: #ffffff;
 }
+
 .panel-blue {
-    background-color: $blue;  
+    background-color: $blue;
     color: #ffffff;
 }
+
 .panel-red {
-    background-color: $red;  
+    background-color: $red;
     color: #ffffff;
 }
+
 .panel-orange {
-    background-color: $orange;   
+    background-color: $orange;
     color: #ffffff;
 }
+
 .panel-gray {
-    background-color: $gray;   
+    background-color: $gray;
     color: #666666;
 }
+
 /* forms */
+
 .form {
     width: 100%;
     padding: 10px;
 }
+
 .input {
     display: inline-block;
     margin-bottom: 10px;
@@ -1221,28 +1245,111 @@ p {
     }
     &:last-child {
         border-bottom: 0px;
+    } //reset outline for chrome 
+    &:focus {
+        outline: none;
+    }
+
+    &[type="radio"] {
+        visibility: hidden;
+        height: 20px;
+        width: 20px;
+        margin: 0;
+    }
+    &[type="radio"]::before {
+        box-sizing: border-box;
+        display: inline-block;
+        visibility: visible;
+        content: "";
+        width: 20px;
+        height: 20px;
+        border: $universalBorder;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        cursor: pointer;
+    }
+    &[type="radio"] + label::before {
+        box-sizing: border-box;
+        display: inline-block;
+        visibility: hidden;
+        content: "";
+        width: 10px;
+        height: 10px;
+        border: 1px $blue solid;
+        background-color: $blue;
+        position: relative;
+        left: -19px;
+        top: -5px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+    }
+    &[type="radio"]:checked {
+        & + label::before {
+            visibility: visible; 
+        }   
+    }
+    &[type="checkbox"] {
+        visibility: hidden;
+        height: 20px;
+        width: 20px;
+        margin: 0;
+    }
+    &[type="checkbox"]::before {
+        box-sizing: border-box;
+        display: inline-block;
+        visibility: visible;
+        content: "";
+        width: 20px;
+        height: 20px;
+        border: $universalBorder;
+        cursor: pointer;
+    }
+    &[type="checkbox"] + label::before {
+        box-sizing: border-box;
+        display: inline-block;
+        visibility: hidden;
+        content: "";
+        width: 10px;
+        height: 10px;
+        border: 1px $blue solid;
+        background-color: $blue;
+        position: relative;
+        left: -19px;
+        top: -5px;
+    }
+    &[type="checkbox"]:checked {
+        & + label::before {
+            visibility: visible; 
+        }   
     }
 }
+
 .input-label {
     color: #999999;
     font-size: 0.9em;
     font-family: 'Roboto';
 }
+
 .input-rounded {
     border-radius: 7px;
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
 }
+
 .input.input-underline {
     border: none;
     border-bottom: $universalBorder;
 }
+
 .input-focused:focus {
     border: 1px solid $blue;
-    -webkit-box-shadow: 2px 2px 3px 0px rgba(0,140,186,0.3);
-    -moz-box-shadow: 2px 2px 3px 0px rgba(0,140,186,0.3);
-    box-shadow: 2px 2px 3px 0px rgba(0,140,186,0.3);
+    -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 140, 186, 0.3);
+    -moz-box-shadow: 2px 2px 3px 0px rgba(0, 140, 186, 0.3);
+    box-shadow: 2px 2px 3px 0px rgba(0, 140, 186, 0.3);
 }
+
 .input-underline.input-focused:focus {
     border: none;
     box-shadow: none;
@@ -1262,66 +1369,87 @@ from: https://sashat.me/2017/01/11/list-of-20-simple-distinct-colors/
 .ui-red {
     @include color(#e6194b);
 }
+
 .ui-green {
     @include color(#3cb44b);
 }
+
 .ui-yellow {
     @include color(#ffe119);
 }
+
 .ui-blue {
     @include color(#0082c8);
 }
+
 .ui-orange {
     @include color(#f58231);
 }
+
 .ui-purple {
     @include color(#911eb4);
 }
+
 .ui-cyan {
     @include color(#46f0f0);
 }
+
 .ui-magenta {
     @include color(#f032e6);
 }
+
 .ui-lime {
     @include color(#d2f53c);
 }
+
 .ui-pink {
     @include color(#fabebe);
 }
+
 .ui-teal {
     @include color(#008080);
 }
+
 .ui-lavender {
     @include color(#e6beff);
 }
+
 .ui-brown {
     @include color(#aa6e28);
 }
+
 .ui-beige {
     @include color(#fffac8);
 }
+
 .ui-maroon {
     @include color(#800000);
 }
+
 .ui-mint {
     @include color(#aaffc3);
 }
+
 .ui-olive {
     @include color(#808000);
 }
+
 .ui-coral {
     @include color(#ffd8b1);
 }
+
 .ui-navy {
     @include color(#000080);
 }
+
 .ui-grey {
     @include color(#808080);
 }
+
 .ui-white {
     @include color(#FFFFFF);
 }
+
 .ui-black {
     @include color(#000000);
 }
